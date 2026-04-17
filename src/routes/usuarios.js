@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
 router.get('/:cpf', (req, res) => {
     const { cpf } = req.params;
 
-    // Usamos db.get pois o CPF é único, então esperamos apenas UM resultado
+    // Usamos db.get pois o CPF é único, então esperamos apenas um resultado
     const sql = "SELECT * FROM usuarios WHERE cpf = ?";
 
     db.get(sql, [cpf], (err, row) => {
